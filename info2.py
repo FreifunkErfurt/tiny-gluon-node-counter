@@ -1,11 +1,11 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python2
 
 import json
-import urllib.request
+import urllib2
 import config
 
-response = urllib.request.urlopen(config.BASE_URL + '/nodes.json')
-node_list = json.loads(response.readall().decode('UTF-8'))
+response = urllib2.urlopen(config.BASE_URL + '/nodes.json')
+node_list = json.loads(response.read().decode('UTF-8'))
 
 clients = 0
 nodes = 0
